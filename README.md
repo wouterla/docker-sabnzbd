@@ -1,7 +1,7 @@
 docker sabnzbd
 ==============
 
-This is a Dockerfile to set up (http://sabnzbd.org/ "SABnzbd") - (http://sabnzbd.org/)
+This is a Dockerfile to set up "SABnzbd" - (http://sabnzbd.org/)
 
 Build from docker file
 
