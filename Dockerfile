@@ -3,6 +3,8 @@ MAINTAINER Tim Haak <tim@haak.co.uk>
 
 RUN locale-gen en_US en_US.UTF-8
 
+RUN echo "deb http://archive.ubuntu.com/ubuntu precise universe multiverse" >> /etc/apt/sources.list
+
 RUN apt-get -q update
 RUN apt-mark hold initscripts udev plymouth mountall
 RUN apt-get -qy --force-yes dist-upgrade
@@ -15,8 +17,7 @@ RUN apt-get -q update
 
 RUN apt-get install -qy --force-yes sabnzbdplus
 RUN apt-get install -qy --force-yes sabnzbdplus-theme-classic sabnzbdplus-theme-mobile sabnzbdplus-theme-plush
-RUN apt-get install -qy --force-yes par2 python-yenc unzip
-#RUN apt-get install -qy --force-yes unrar-free
+RUN apt-get install -qy --force-yes par2 python-yenc unzip unrar
 
 VOLUME /config
 VOLUME /data
