@@ -16,15 +16,16 @@ RUN apt-get install -qy --force-yes sabnzbdplus
 RUN apt-get install -qy --force-yes sabnzbdplus-theme-classic sabnzbdplus-theme-mobile sabnzbdplus-theme-plush
 RUN apt-get install -qy --force-yes par2 python-yenc unzip unrar
 
+# apt clean
+RUN apt-get clean &&\
+  rm -rf /var/lib/apt/lists/* &&\
+  rm -rf /tmp/*
+
 VOLUME /config
 VOLUME /data
 
 ADD ./start.sh /start.sh
-RUN chmod u+x  /start.sh
-
-# apt clean
-RUN apt-get clean
-RUN rm -rf /var/lib/apt/lists/*
+RUN chmod u+x  /start.shs
 
 EXPOSE 8080 9090
 
