@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:trusty
 MAINTAINER Tim Haak <tim@haak.co.uk>
 
 # To get rid of error messages like "debconf: unable to initialize frontend: Dialog":
