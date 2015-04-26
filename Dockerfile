@@ -21,9 +21,6 @@ RUN add-apt-repository -y  ppa:jcfp/ppa && \
 
 VOLUME ["/config","/data"]
 
-ADD ./start.sh /start.sh
-RUN chmod u+x  /start.sh
-
 EXPOSE 8080 9090
 
 CMD ["/usr/bin/sabnzbdplus","--config-file","/config","--server",":8080","--console"]
