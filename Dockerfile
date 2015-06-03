@@ -1,21 +1,12 @@
-FROM ubuntu:trusty
-MAINTAINER Tim Haak <tim@haak.co.uk>
-
-ENV DEBIAN_FRONTEND="noninteractive" \
-    LANG="en_US.UTF-8" \
-    LC_ALL="C.UTF-8" \
-    LANGUAGE="en_US.UTF-8"
-
-RUN echo "deb http://archive.ubuntu.com/ubuntu trusty multiverse" >> /etc/apt/sources.list && \
-    apt-get -q update && \
-    apt-get -qy --force-yes dist-upgrade && \
-    apt-get install -qy curl python-software-properties software-properties-common supervisor ca-certificates procps
+FROM timhaak/base:latest
+MAINTAINER tim@haak.co.uk
 
 RUN add-apt-repository -y  ppa:jcfp/ppa && \
     apt-get -q update && \
     apt-get install -qy --force-yes  sabnzbdplus sabnzbdplus-theme-classic sabnzbdplus-theme-mobile sabnzbdplus-theme-plush \
     par2 python-yenc unzip unrar && \
-    apt-get clean && \
+    apt-get -y autoremove && \
+    apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /tmp/*
 
