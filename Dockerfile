@@ -14,4 +14,4 @@ VOLUME ["/config","/data"]
 
 EXPOSE 8080 9090
 
-CMD ["/usr/bin/sabnzbdplus","--config-file","/config","--server",":8080","--console"]
+CMD ["/usr/bin/sabnzbdplus","--config-file","/config","--console"]
