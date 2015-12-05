@@ -1,5 +1,5 @@
 FROM timhaak/base:latest
-MAINTAINER tim@haak.co.uk
+MAINTAINER tim@haak.co
 
 RUN add-apt-repository -y  ppa:jcfp/ppa && \
     apt-get -q update && \
