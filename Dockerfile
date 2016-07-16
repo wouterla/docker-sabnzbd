@@ -3,7 +3,7 @@ MAINTAINER Tim Haak <tim@haak.co>
 
 RUN add-apt-repository -y  ppa:jcfp/ppa && \
     apt-get -q update && \
-    apt-get install -qy --force-yes  sabnzbdplus sabnzbdplus-theme-classic sabnzbdplus-theme-mobile sabnzbdplus-theme-plush \
+    apt-get install -qy --force-yes sabnzbdplus \
     par2 python-yenc unzip unrar && \
     apt-get -y autoremove && \
     apt-get -y clean && \
