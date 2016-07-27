@@ -59,8 +59,8 @@ RUN apk --update add \
 
 EXPOSE 8080 9090
 
-VOLUME ["/datadir", "/download"]
+VOLUME ["/config", "/download"]
 
 WORKDIR /sabnzbd
 
-CMD su -pc "./SABnzbd.py -b 0 -f /datadir/config.ini"
+CMD su -pc "./SABnzbd.py -b 0 -f /config/"
