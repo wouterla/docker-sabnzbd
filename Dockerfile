@@ -63,4 +63,4 @@ VOLUME ["/config", "/download"]
 
 WORKDIR /sabnzbd
 
-CMD su -pc "./SABnzbd.py -b 0 -f /config/"
+CMD su -pc "./SABnzbd.py -b 0 -f /config/ -s 0.0.0.0:8080"
