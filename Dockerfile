@@ -59,7 +59,7 @@ RUN apk --update add \
 
 EXPOSE 8080 9090
 
-VOLUME ["/config", "/download"]
+VOLUME ["/config", "/data"]
 
 WORKDIR /sabnzbd
 
