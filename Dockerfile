@@ -15,6 +15,7 @@ RUN apk --update add \
     unrar \
     mercurial \
     openssl \
+    ca-certificates \
     make \
     automake \
     autoconf \
