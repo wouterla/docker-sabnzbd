@@ -9,6 +9,8 @@ RUN apk --update add \
     py-openssl \
     openssl-dev \
     py-pip \
+    ffmpeg-libs \    
+    ffmpeg \
     python-dev \
     libffi-dev \
     musl-dev \
