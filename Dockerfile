@@ -5,7 +5,6 @@ RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-d
   && apk --update add $buildDeps \
   && apk add \
     python \
-    py-openssl \
     ffmpeg-libs \
     ffmpeg \
     unrar \
