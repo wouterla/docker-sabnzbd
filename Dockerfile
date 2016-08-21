@@ -1,5 +1,6 @@
 FROM alpine:latest
 MAINTAINER Hywel Rees <hjr555@gmail.com>
+ARG GITTAG=1.1.0RC3
 
 RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-dev libffi-dev musl-dev py-pip" \
   && apk --update add $buildDeps \
@@ -12,7 +13,7 @@ RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-d
     ca-certificates \
     p7zip \
 && pip install --upgrade pip --no-cache-dir \
-&& pip install pyopenssl cheetah --no-cache-dir \ 
+&& pip install pyopenssl cheetah --no-cache-dir \
 && git clone --depth 1 https://github.com/Parchive/par2cmdline.git \
 && cd /par2cmdline \
 && aclocal \
@@ -23,7 +24,7 @@ RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-d
 && make install \
 && cd / \
 && rm -rf par2cmdline \
-&& git clone --depth 1 --branch 1.1.0RC2 https://github.com/sabnzbd/sabnzbd.git \
+&& git clone --depth 1 --branch ${GITTAG} https://github.com/sabnzbd/sabnzbd.git \
 && hg clone https://bitbucket.org/dual75/yenc \
 && cd /yenc \
 && python setup.py build \
@@ -31,7 +32,7 @@ RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-d
 && cd / \
 && rm -rf /yenc \
 && apk del $buildDeps \
-&& rm -rf \ 
+&& rm -rf \
     /var/cache/apk \
     /par2cmdline \
     /yenc \
