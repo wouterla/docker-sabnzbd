@@ -33,7 +33,7 @@ RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-d
 && rm -rf /yenc \
 && apk del $buildDeps \
 && rm -rf \
-    /var/cache/apk \
+    /var/cache/apk/* \
     /par2cmdline \
     /yenc \
     /sabnzbd/.git \
