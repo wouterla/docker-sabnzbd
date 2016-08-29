@@ -2,10 +2,11 @@ FROM alpine:latest
 MAINTAINER Hywel Rees <hjr555@gmail.com>
 ARG GITTAG=1.1.0RC3
 
-RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-dev libffi-dev musl-dev py-pip" \
+RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-dev libffi-dev musl-dev" \
   && apk --update add $buildDeps \
   && apk add \
     python \
+    py-pip \
     ffmpeg-libs \
     ffmpeg \
     unrar \
