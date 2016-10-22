@@ -6,11 +6,22 @@ git clone https://github.com/timhaak/docker-sabnzbd.git
 cd docker-sabnzbd
 docker build -t sabnzbd .
 ```
+
 ```
 docker run -d \
   -h *your_host_name* \
   -v /*your_config_location*:/config \
   -v /*your_videos_location*:/data \
+  -e UID=*your user's numeric UID* \
+  -e GID=*your user's numeric GID* \
   -p 8080:8080 \
   --restart=always sabnzbd
 ```
+
+# Environment variable
+
+- **UID**: The user's numeric UID. All downloaded files will have that UID. Default value if not present: **0** (files will belong to the user root)
+- **GID**: The user's numeric GID. All downloaded files will have that GID. Default value if not present: **0** (files will belong to the group root)
+
+
+
