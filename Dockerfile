@@ -1,7 +1,7 @@
-FROM alpine:latest
-MAINTAINER Cameron Meindl <cmeindl@gmail.com>
+FROM hypriot/rpi-alpine-scratch:latest
+MAINTAINER Wouter Lagerweij <wouter@lagerweij.com>
 ARG GITTAG=1.1.1
-ARG PAR2TAG=v0.6.14 
+ARG PAR2TAG=v0.6.14
 
 RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-dev libffi-dev musl-dev" \
   && apk --update add $buildDeps \
@@ -54,7 +54,7 @@ RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-d
 
 EXPOSE 8080 9090
 
-VOLUME ["/config", "/data"]
+VOLUME ["/config", "/data", "/scripts"]
 
 WORKDIR /sabnzbd
 
