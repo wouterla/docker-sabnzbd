@@ -1,4 +1,4 @@
-FROM privateport/alpine-rpi:3.3
+FROM hypriot/rpi-alpine-scratch:latest
 MAINTAINER Wouter Lagerweij <wouter@lagerweij.com>
 ARG GITTAG=1.1.1
 ARG PAR2TAG=v0.6.14
